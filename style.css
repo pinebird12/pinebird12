@@ -3,8 +3,14 @@ body {
 	   and use the OS’s UI font as the website font
 	 */
   font: 100%/1.5 system-ui;
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
   img {
-    max-width: 100%;
+    max-width: 80em;
+    max-height: 100rem;
     height: auto;
     width: auto;
   }

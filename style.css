@@ -16,7 +16,6 @@ body {
 
   img {
     max-width: 80VW;
-    height: auto;
     width: auto;
   }
 
@@ -57,5 +56,37 @@ body {
         border-bottom-color: oklch(80% 3% 200);
       }
     }
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+
+    label {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+
+    button {
+      display: grid;
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: 1.5em;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  textarea {
+    font: inherit;
   }
 }

@@ -1,10 +1,16 @@
 :root {
-  --color-basis: #550CF5;
-  --color-accent1Dark: #990CF2;
-  --color-accent2Dark: #0C16F2;
-  --color-accent1Light: #0C5FF2;
-  --color-accent2Light: #E40CF2;
-  --color-background: #B498EB;
+  --color-basis: #E5E6C7;
+
+  --color-h2: #094C0E;
+  --color-h3: #8E372A;
+
+  --color-accentPrimary: #64662C;
+
+  --color-accent1Dark: #5D2C66;
+  --color-accent2Dark: #372C66;
+
+  --color-accent1Light: #CDC8E6;
+  --color-accent2Light: #E1C8E6;
 }
 
 body {
@@ -18,7 +24,11 @@ body {
   margin-right: auto;
   padding-left: 10VW;
   padding-right: 10VW;
-  background-color: var(--color-background);
+  background-color: var(--color-basis);
+
+  h1 {
+    color: var(--color-accent2Dark);
+  }
 
   img {
     max-width: 80VW;
@@ -27,10 +37,16 @@ body {
 
   h2 {
     font-size: 20px;
+    color: var(--color-h2);
   }
 
   h3 {
     font-size: 16px;
+    color: var(--color-h3);
+  }
+
+  a {
+    color: var(--color-accent1Dark);
   }
 
   nav {
@@ -48,18 +64,19 @@ body {
       border-bottom-color: oklch(80% 3% 200);
 
       &:hover {
-        border-bottom-color: var(--color-accent2Light);
+        border-bottom-color: var(--color-accent2Dark);
         border-bottom-width: 0.4em;
-        background-color: oklch(from var(--color-accent2Light) 95% 5% h);
+        background-color: var(--color-accent2Light);
       }
 
       &.current {
       border-bottom-width: 0.4em;
+      border-bottom-color: var(--color-accentPrimary);
       }
 
       &.current:hover {
-        background-color: oklch(from var(--color-basis) 95% 5% h);
-        border-bottom-color: var(--color-basis);
+        background-color: var(--color-accent2Light);
+        border-bottom-color: var(--color-accent2Dark);
       }
     }
   }

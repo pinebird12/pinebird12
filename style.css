@@ -36,12 +36,14 @@ body {
   }
 
   h2 {
-    font-size: 20px;
-    color: var(--color-h2);
+    color: var(--color-accent2Dark);
   }
 
   h3 {
-    font-size: 16px;
+    color: var(--color-h2);
+  }
+
+  h4 {
     color: var(--color-h3);
   }
 
@@ -56,12 +58,13 @@ body {
     a {
       flex: 1;
       text-decoration: none;
-      color: inherit;
+      color: var(--color-accent1Dark);
+      font-weight: bold;
       text-align: center;
       padding: 0.5em;
       border-bottom-width: 1px;
       border-bottom-style: solid;
-      border-bottom-color: oklch(80% 3% 200);
+      border-bottom-color: var(--color-accentPrimary);
 
       &:hover {
         border-bottom-color: var(--color-accent2Dark);
@@ -76,7 +79,6 @@ body {
 
       &.current:hover {
         background-color: var(--color-accent2Light);
-        border-bottom-color: var(--color-accent2Dark);
       }
     }
   }

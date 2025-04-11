@@ -1,18 +1,24 @@
 :root {
-  --color-accent: oklch(65% 50% 0)
+  --color-basis: #550CF5;
+  --color-accent1Dark: #990CF2;
+  --color-accent2Dark: #0C16F2;
+  --color-accent1Light: #0C5FF2;
+  --color-accent2Light: #E40CF2;
+  --color-background: #B498EB;
 }
 
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
 	 */
-  accent-color: var(--color-accent);
+  accent-color: var(--color-accent2Light);
   font: 100%/1.5 system-ui;
   max-width: 80VW;
   margin-left: auto;
   margin-right: auto;
   padding-left: 10VW;
   padding-right: 10VW;
+  background-color: var(--color-background);
 
   img {
     max-width: 80VW;
@@ -42,9 +48,9 @@ body {
       border-bottom-color: oklch(80% 3% 200);
 
       &:hover {
-        border-bottom-color: var(--color-accent);
+        border-bottom-color: var(--color-accent2Light);
         border-bottom-width: 0.4em;
-        background-color: oklch(from var(--color-accent) 95% 5% h)
+        background-color: oklch(from var(--color-accent2Light) 95% 5% h);
       }
 
       &.current {
@@ -52,8 +58,8 @@ body {
       }
 
       &.current:hover {
-        background-color: oklch(from oklch(80% 3% 200) 95% 5% h);
-        border-bottom-color: oklch(80% 3% 200);
+        background-color: oklch(from var(--color-basis) 95% 5% h);
+        border-bottom-color: var(--color-basis);
       }
     }
   }

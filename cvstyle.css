@@ -10,12 +10,24 @@ body {
 
     section {
         display: contents;
-        margin-bottom: 2em;
+        margin-bottom: 20em;
+    }
+
+    .heading-wrapper {
+        grid-column: 1;
+        margin: 0;
     }
 
     h2, h3, h4 {
-        grid-column: 1;
         margin: 0;
+    }
+
+    .alignHere {
+        grid-column: span 2;
+    }
+
+    .alignLeft {
+        grid-column: 1;
     }
 
     p, ul {

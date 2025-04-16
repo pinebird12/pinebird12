@@ -1,4 +1,4 @@
-:root {
+:root[data-theme='light'] {
   --color-basis: #E5E6C7;
 
   --color-h2: #094C0E;
@@ -11,6 +11,23 @@
 
   --color-accent1Light: #CDC8E6;
   --color-accent2Light: #E1C8E6;
+}
+
+:root[data-theme='dark'] {
+  --color-basis: #2E332F;
+
+  --color-h2: #2EB064;
+  --color-h3: #FE8977;
+
+  --color-accentPrimary: #4D8859;
+
+
+  --color-accent1Dark: #88554D;
+  --color-accent2Dark: #CA7BD6;
+
+  --color-accent1Light: #332E32;
+  --color-accent2Light: #474140;
+  color: #FFFFFF; !important
 }
 
 body {
@@ -87,6 +104,7 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1em;
+    border-color: var(--color-accent2Light);
 
     label {
       display: grid;
@@ -97,8 +115,24 @@ body {
       display: grid;
       grid-column: 1 / -1;
       text-align: center;
+      background-color: var(--color-accent1Light);
+      color: inherit;
+      border-color: inherit;
     }
-  }
+
+    input {
+      color: inherit;
+      background-color: var(--color-accent1Light);
+      border-color: inherit;
+    }
+
+    textarea {
+      font: inherit;
+      color: inherit;
+      background-color: var(--color-accent1Light);
+      border-color: inherit;
+    }
+ }
 
   .project {
     display: grid;
@@ -111,7 +145,15 @@ body {
     }
   }
 
-  textarea {
+  label.color-scheme {
+    position: absolute;
+    top: 1em;
+    right: 1em;
     font: inherit;
+    font-size: 80%;
+    select {
+      width: 6em;
+    }
   }
+
 }

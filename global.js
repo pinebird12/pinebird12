@@ -1,18 +1,19 @@
 console.log('!!!');
 console.log('A secret!')
 
-// Set the theme initialy:
+// Set the theme on startup
 let prefersDark = matchMedia('(prefers-color-scheme: dark)')['matches'];
 if (prefersDark) {
   document.documentElement.dataset['theme'] = 'dark';
 } else {
   document.documentElement.dataset['theme'] = 'light';
 }
-
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 };
 
+
+// Configure the navigation bar
 let navLinks = $$("nav a");
 
 let currentLink = navLinks.find(
@@ -57,6 +58,7 @@ for (let p of pages) {
   }
 }
 
+// Set up theme switching
 document.body.insertAdjacentHTML(
   'afterbegin',
   `
@@ -69,19 +71,44 @@ document.body.insertAdjacentHTML(
 		</select>
 	</label>`,
 );
+if ('colorScheme' in localStorage) {
+  let scheme = localStorage.colorScheme;
+  document.documentElement.dataset['theme'] = scheme;
+  document.querySelector('label.color-scheme select').value = scheme;
+}
+
 
 let select = document.querySelector(".color-scheme")
 
 select.addEventListener('input', function (event) {
-  console.log('color scheme changed to', event.target.value);
   if (event.target.value === 'light dark') {
     let prefersDark = matchMedia('(prefers-color-scheme: dark)')['matches'];
     if (prefersDark) {
       document.documentElement.dataset['theme'] = 'dark';
+      localStorage.colorScheme = 'dark';
     } else {
       document.documentElement.dataset['theme'] = 'light';
+      localStorage.colorScheme = 'light';
     }
   } else {
     document.documentElement.dataset['theme'] = event.target.value;
+      localStorage.colorScheme = event.target.value;
   }
 });
+
+// Improve the mail form
+let form = document.querySelector('form.contact')
+if (form !== null) {
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let data = new FormData(form);
+    let url = form.action + '?'
+    for (let [name, value] of data) {
+      url = url + name;
+      url = url + '=';
+      url = url + encodeURIComponent(value);
+      url = url + '&';
+    }
+    location.href = url;
+  });
+}

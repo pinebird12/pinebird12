@@ -2,7 +2,7 @@
 - 🔭 I’m currently working on geological feature detection using support vector machines - [mawks12/seamount_picking](https://github.com/mawks12/seamount_picking)
 - 🌱 I’m currently learning c++ for arduino, to help with outreach at the UCSD Biomedical Engineering Society
 - 📫 How to reach me: martinhawks8@gmail.com
-- 😄 Pronouns: They/He
+- 😄 Pronouns: They/Them
 - ⚡ Fun fact: I recently discovered emacs...
 
 <!--

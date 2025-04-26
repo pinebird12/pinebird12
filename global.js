@@ -29,7 +29,8 @@ let pages = [
   { url: 'projects/', title: 'Projects' },
   { url: 'contact/', title: 'Contact' },
   { url: 'curriculumVitae.html', title: 'CV' },
-  { url: 'https://github.com/mawks12', title: 'GitHub'},
+  { url: 'https://github.com/mawks12', title: 'GitHub (Student)'},
+  { url: 'https://github.com/pinebird12', title: 'GitHub (Personal)'}
 ];
 
 let nav = document.createElement('nav');
@@ -96,6 +97,7 @@ select.addEventListener('input', function (event) {
   }
 });
 
+
 // Improve the mail form
 let form = document.querySelector('form.contact')
 if (form !== null) {
@@ -111,4 +113,61 @@ if (form !== null) {
     }
     location.href = url;
   });
+}
+
+// Project page importing from json
+
+export function renderProjects(projects, container) {
+  if (container === null) {
+    return null;
+  } else {
+      container.innerHTML = '';
+      for (let project of projects) {
+        const article = document.createElement('article');
+        if (project['title'] === undefined
+            || project['description'] === undefined
+            || project['link'] === undefined) {  // Check for key components
+          console.log("Found Project with missing data, ignoring...");
+          console.log(project);
+          continue;
+        }
+
+        const heading = document.createElement('h2');
+        heading.textContent = project['title'];
+        const desc = document.createElement('p');
+        desc.textContent = project['description'];
+        const link = document.createElement('a');
+        link.setAttribute('href', project['link']);
+        link.textContent = "Project Information"
+        article.appendChild(heading);
+
+        if (!(project['image'] === null)) {
+          const image = document.createElement('img');
+          image.setAttribute('src', project['image']);
+          article.appendChild(image);
+        }
+        article.appendChild(desc);
+        article.appendChild(link);
+        container.appendChild(article);
+    }
+  }
+}
+
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`failed to fetch Projects: ${response.statusText}`);
+    } else {
+      const data = await response.json();
+      return data
+    }
+  } catch (error) {
+    console.error("error fetching or parsing the JSON data:\n", error);
+  }
+}
+
+
+export async function fetchGithubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
 }

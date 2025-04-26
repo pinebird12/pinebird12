@@ -150,10 +150,9 @@ body {
     top: 1em;
     right: 1em;
     font: inherit;
-    font-size: 80%;
+    font-size: 75%;
     select {
       width: 6em;
     }
   }
-
 }

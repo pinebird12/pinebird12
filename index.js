@@ -12,7 +12,7 @@ const gitElem = document.querySelector('.github-stats');
 
 if (gitElem) {
   gitElem.innerHTML = `
-        <dl>
+        <dl class="stat-info">
           <dt>Public Repos:</dt><dd>${gitData.public_repos}</dd>
           <dt>Public Gists:</dt><dd>${gitData.public_gists}</dd>
           <dt>Followers:</dt><dd>${gitData.followers}</dd>

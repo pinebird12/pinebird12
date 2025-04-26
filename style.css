@@ -43,6 +43,12 @@ body {
   padding-right: 10VW;
   background-color: var(--color-basis);
 
+  .stat-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1em;
+  }
+
   h1 {
     color: var(--color-accent2Dark);
   }

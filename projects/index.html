@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html.>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
@@ -9,30 +9,19 @@
     </head>
     <body>
         <h1 class='project-title'>Current Projects</h1>
-        <div class="project">
-            <article>
-                <h2>Heart conduction Visualization</h1>
-                <img src="../images/sdfseHearts.jpg" alt="LED Hearts Being Presented as part of the STEM Education Project">
-                <p>
-                    The LED Hearts were a portion of the Continuing Stem Education Project from the Outreach Committee of the Biomedical Engineering Society here at UCSD. They were an exciting project to help work on as they combined arduino, 3d printing, wiring, and timings to create something which hopefully will inspire a younger generation of scientists! I contributed all of the code managing led timings and sequences on the microcontroller, which can be found on the project <a href="https://github.com/pinebird12/sdfsc_arduino" target="_blank">Github Page</a>.
-                </p>
-            </article>
-            <article>
-                <h2>Starling Sim </h1>
-                <!-- TODO: Add screenshot of simulation running -->
-                <img alt="" src="" />
-                <h3>Work in progress</h3>
-                <p>
-                    This project I am undertaking for fun after having seen the flocking behavior of starlings, and I thought it would be an interesting thing to try to simulate probabaliticaly. Though incomplete, it has already been a fun project to try. The current code for it can be found on it's <a href="https://github.com/pinebird12/starling_Sim" target="_blank">Github Page</a>.
-                </p>
-            </article>
-            <article>
-                <h2>Seamount Identification</h1>
-                <img alt="Pipeline for processing data before passing to SVM" src="../images/Seamount_workflow_v1.jpg"/>
-                <p>
-                    As Part of the Sandwell Lab at Scripps Institute for Geophysics and Planetry Physics, I am currently working to develop a ML Pipeline to speed up the currently highly labor intensive process of manualy identifying seamounts in satelite derived gravity data (VGG). Above is an example of the current preprocessing pipeline we use to smooth and amplify potential seamounts. For more information on this type of work, see <a href="https://topex.ucsd.edu" target="_blank">our Website</a>.
-                </p>
-            </article>
+
+        <div class="container">
+            <svg id="projects-plot" viewBox="-50 -50 100 100"></svg>
+            <ul class="legend"></ul>
         </div>
+        <input
+        class="searchBar"
+        type="search"
+        aria-label="Search projects"
+        placeholder="🔍 Search projects…"
+        />
+        <div class="project">
+        </div>
+
 </body>
 </html>

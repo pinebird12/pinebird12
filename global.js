@@ -8,6 +8,8 @@ if (prefersDark) {
 } else {
   document.documentElement.dataset['theme'] = 'light';
 }
+
+
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 };

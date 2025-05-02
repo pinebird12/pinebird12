@@ -126,7 +126,7 @@ export function renderProjects(projects, container) {
       container.innerHTML = '';
       const headingElem = document.querySelector('.project-title');
       const numProj = projects.length;
-    headingElem.textContent = `Current Projects (${numProj})`
+      headingElem.textContent = `Current Projects (${numProj})`
       for (let project of projects) {
         const article = document.createElement('article');
         if (project['title'] === undefined

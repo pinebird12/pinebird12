@@ -70,31 +70,31 @@ function makePlot(data) {
       .attr('d', arc)
       .attr('fill', colors(i))
       .on('click', () => {
-      selectedIndex = selectedIndex === i ? -1 : i;
+        selectedIndex = selectedIndex === i ? -1 : i;
 
-    svg
-      .selectAll('path')
-      .attr('class', (_, idx) => (
-        idx === selectedIndex ? 'selected' : null
-      ));
+        svg
+          .selectAll('path')
+          .attr('class', (_, idx) => (
+            idx === selectedIndex ? 'selected' : null
+          ));
 
-    legend
-      .selectAll('li')
-      .attr('class', (_, idx) => (
-        idx === selectedIndex ? 'selected legend-elem' : 'legend-elem'
-      ));
+        legend
+          .selectAll('li')
+          .attr('class', (_, idx) => (
+            idx === selectedIndex ? 'selected legend-elem' : 'legend-elem'
+          ));
 
-    if (selectedIndex === -1) {
-      visProj = projects;
-    } else {
-      visProj = projects.filter((obj) =>
-        obj.year === legend.selectAll('li')
-          .filter((d, i) =>
-            i === selectedIndex).text().split(/(\s+)/)[0]
-      );
-    console.log(visProj);
-    }
-    renderProjects(visProj, projectsContainer, 'h2');
+        if (selectedIndex === -1) {
+          visProj = projects;
+        } else {
+          visProj = projects.filter((obj) =>
+            obj.year === legend.selectAll('li')
+              .filter((d, i) =>
+                i === selectedIndex).text().split(/(\s+)/)[0]
+          );
+        console.log(visProj);
+        }
+        renderProjects(visProj, projectsContainer, 'h2');
     });
   });
 }
@@ -111,7 +111,7 @@ let searchInput = document.querySelector('.searchBar');
 searchInput.addEventListener('input', (event) => {
   // update query value
   query = event.target.value.toLowerCase();
-  let visProj = projects.filter((project) => {
+  visProj = projects.filter((project) => {
     let values = Object.values(project).join('\n').toLowerCase();
     return values.includes(query.toLowerCase());
   });

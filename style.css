@@ -145,14 +145,9 @@ body {
     align-items: center;
   }
 
-  .swatch {
-    display: inline-block;
-    aspect-ratio: 1 / 1;
-  }
-
   .legend{
     flex: 1;
-    padding: 1em;
+    padding: 4em;
     border: 2px;
     border-color: var(--color-accent1Dark);
     display: grid;
@@ -161,11 +156,32 @@ body {
     border-radius: 100%;
   }
 
+  svg {
 
+
+    &:has(path:hover) {
+
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+    path {
+      transition: 300ms;
+      cursor: points;
+    }
+  }
+}
+
+  .selected {
+    --color: var(--color-accent2Light) !important ;
+
+    &:is(path) {
+      fill: var(--color);
+    }
+  }
 
   .legend-elem::marker {
-    color: var(--color);
-    font-size: 200%;
+    color: var(--color) ;
+    font-size: 4em;
   }
 
   #projects-plot {

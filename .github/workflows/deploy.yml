@@ -2,15 +2,18 @@ jobs:
   build:
     steps:
     - name: Checkout
+      on: push
       uses: actions/checkout@v4
       with:
         fetch-depth: '0'
 
     - name: Run Elocuent
+      on: push
       run: |
         npx elocuent -d . -o meta/loc.csv
 
     - name: Commit and Push
+      on: push
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"

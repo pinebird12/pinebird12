@@ -1,0 +1,33 @@
+name: Update LOC CSV
+
+on:
+  push:
+    branches:
+      - master  # Replace 'main' with your default branch if it's different.
+
+jobs:
+  update-loc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Use the version of Node.js required by `elocuent`.
+
+      - name: Install dependencies
+        run: npm install -g elocuent
+
+      - name: Run elocuent to update loc.csv
+        run: npx elocuent -d . -o meta/loc.csv --spaces 2
+
+      - name: Commit and push updated loc.csv
+        run: |
+          git config --local user.name "GitHub Actions Bot"
+          git config --local user.email "actions@github.com"
+          git add -f meta/loc.csv
+          git commit -m "Update LOC CSV [skip ci]" || echo "No changes to commit"
+          git push

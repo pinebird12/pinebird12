@@ -211,4 +211,48 @@ body {
       width: 6em;
     }
   }
+
+  /* For the plotting system  */
+  .gridlines {
+    opacity: 0.1;
+  }
+
+  dl.info {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 2em 1fr;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+  }
+
+  dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    background-color: var(--color-basis);
+    box-shadow: 5px 5px 5px black;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  circle:hover {
+    transform: scale(1.5);
+  }
+
+  #commit-tooltip {
+    visibility: hidden;
+  }
+
 }

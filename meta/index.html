@@ -7,6 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type='module' src='main.js'></script>
+        <script type='module' src='../global.js'></script>
+        <link href="../style.css" rel="stylesheet" />
 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -21,7 +23,24 @@
             </p>
         <![endif]-->
 
-<div id="stats"></div>
+        <div id="stats"></div>
+        <h2>Number of Commits by day</h2>
+        <div id="chart"></div>
+
+        <!-- Tooltip code -->
+
+        <dl id="commit-tooltip" class="info tooltip">
+        <dt>Commit</dt>
+        <dd>
+            <a href="" id="commit-link" target="_blank"></a>
+        </dd>
+
+        <dt>Date</dt>
+        <dd id="commit-date"></dd>
+
+        <!-- Add: Time, author, lines edited -->
+        </dl>
+
 
     </body>
 </html>

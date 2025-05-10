@@ -203,8 +203,6 @@ function brushed(event) {
   renderLanguageBreakdown(selection);
 }
 
-// minor change
-
 function isCommitSelected(selection, commit) {
   if (!selection) {
     return false;

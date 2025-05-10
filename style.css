@@ -255,4 +255,49 @@ body {
     visibility: hidden;
   }
 
+  /* for the selector */
+ @keyframes marching-ants {
+    to {
+      stroke-dashoffset: -8; /* 5 + 3 */
+    }
+  }
+
+  .selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+  }
+
+  circle.selected {
+    fill: #ff6b6b;
+  }
+
+  /* stats styling so it look nice */
+#stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Optional: Adds spacing between different stats sections */
+}
+
+#stats dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusts number of columns dynamically */
+  column-gap: 1rem; /* Space between columns */
+  row-gap: 0.5rem; /* Space between rows */
+}
+
+#stats dt, #stats dd {
+  text-align: center; /* Optional: Centers the text */
+}
+
+#stats dt {
+  font-weight: bold; /* Highlights the stat name */
+}
+
+#stats dd {
+  margin: 0; /* Ensures no extra margin interferes */
+}
+
 }

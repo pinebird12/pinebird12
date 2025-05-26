@@ -242,6 +242,9 @@ body {
   }
 
   circle {
+    @starting-style {
+      r: 0;
+    }
     transition: 200ms;
     transform-origin: center;
     transform-box: fill-box;
@@ -275,29 +278,67 @@ body {
   }
 
   /* stats styling so it look nice */
-#stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Optional: Adds spacing between different stats sections */
+  #stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Optional: Adds spacing between different stats sections */
+  }
+
+  #stats dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusts number of columns dynamically */
+    column-gap: 1rem; /* Space between columns */
+    row-gap: 0.5rem; /* Space between rows */
+  }
+
+  #stats dt, #stats dd {
+    text-align: center; /* Optional: Centers the text */
+  }
+
+  #stats dt {
+    font-weight: bold; /* Highlights the stat name */
+  }
+
+  #stats dd {
+    margin: 0; /* Ensures no extra margin interferes */
+  }
+
+  .selector {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    width: 1fr;
+
+    label {
+      flex: 1;
+      display: inherit;
+      flex-wrap: wrap;
+      text-align: right;
+    }
+
+    input {
+      margin-left: 1em;
+      flex: 1;
+    }
+  }
 }
 
-#stats dl {
+#files {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusts number of columns dynamically */
-  column-gap: 1rem; /* Space between columns */
-  row-gap: 0.5rem; /* Space between rows */
-}
+  grid-template-columns: 1fr 4fr;
 
-#stats dt, #stats dd {
-  text-align: center; /* Optional: Centers the text */
-}
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
 
-#stats dt {
-  font-weight: bold; /* Highlights the stat name */
-}
+  dt {
+    grid-column: 1;
+  }
 
-#stats dd {
-  margin: 0; /* Ensures no extra margin interferes */
-}
-
+  dd {
+    grid-column: 2;
+  }
 }

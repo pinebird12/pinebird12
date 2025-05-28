@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Meta</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type='module' src='main.js'></script>
+        <script type='module' src='../global.js'></script>
+        <link href="../style.css" rel="stylesheet" />
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+    </head>
+
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+            your experience.
+            </p>
+        <![endif]-->
+
+        <div id="stats"></div>
+        <h2>Number of Commits by day</h2>
+        <div class="selector">
+            <label for="">
+                Show commits until:
+                <input id="selected" type="range" min='0' max='100'/>
+            </label>
+            <time id="selected-time"></time>
+        </div>
+        <dl id="files">
+            <!-- we want the following structure for each file:
+                 <div>
+                 <dt>
+                 <code>{file.name}</code>
+                 </dt>
+                 <dd>{file.lines.length} lines</dd>
+                 </div>
+            -->
+        </dl>
+
+        <div id="chart"></div>
+
+        <!-- Tooltip code -->
+
+        <dl id="commit-tooltip" class="info tooltip">
+            <dt>Commit</dt>
+            <dd>
+                <a href="" id="commit-link" target="_blank"></a>
+            </dd>
+
+            <dt>Date</dt>
+            <dd id="commit-date"></dd>
+
+            <!-- Add: Time, author, lines edited -->
+        </dl>
+
+        <p id="selection-count">No commits selected</p>
+        <dl id="language-breakdown" class="stats"></dl>
+    </body>
+
+</html>

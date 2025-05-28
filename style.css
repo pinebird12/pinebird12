@@ -1,0 +1,344 @@
+:root[data-theme='light'] {
+  --color-basis: #E5E6C7;
+
+  --color-h2: #094C0E;
+  --color-h3: #8E372A;
+
+  --color-accentPrimary: #64662C;
+
+  --color-accent1Dark: #5D2C66;
+  --color-accent2Dark: #372C66;
+
+  --color-accent1Light: #CDC8E6;
+  --color-accent2Light: #E1C8E6;
+}
+
+:root[data-theme='dark'] {
+  --color-basis: #2E332F;
+
+  --color-h2: #2EB064;
+  --color-h3: #FE8977;
+
+  --color-accentPrimary: #4D8859;
+
+
+  --color-accent1Dark: #88554D;
+  --color-accent2Dark: #CA7BD6;
+
+  --color-accent1Light: #332E32;
+  --color-accent2Light: #474140;
+  color: #FFFFFF;
+}
+
+body {
+  /* Set line height to 1.5 times the font size
+	   and use the OS’s UI font as the website font
+	 */
+  accent-color: var(--color-accent2Light);
+  font: 100%/1.5 system-ui;
+  max-width: 80VW;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10VW;
+  padding-right: 10VW;
+  background-color: var(--color-basis);
+
+  .stat-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 1em;
+  }
+
+  h1 {
+    color: var(--color-accent2Dark);
+  }
+
+  img {
+    max-width: 80VW;
+    width: auto;
+  }
+
+  h2 {
+    color: var(--color-accent2Dark);
+  }
+
+  h3 {
+    color: var(--color-h2);
+  }
+
+  h4 {
+    color: var(--color-h3);
+  }
+
+  a {
+    color: var(--color-accent1Dark);
+  }
+
+  nav {
+    display: flex;
+    margin-bottom: 5VH;
+
+    a {
+      flex: 1;
+      text-decoration: none;
+      color: var(--color-accent1Dark);
+      font-weight: bold;
+      text-align: center;
+      padding: 0.5em;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: var(--color-accentPrimary);
+
+      &:hover {
+        border-bottom-color: var(--color-accent2Dark);
+        border-bottom-width: 0.4em;
+        background-color: var(--color-accent2Light);
+      }
+
+      &.current {
+      border-bottom-width: 0.4em;
+      border-bottom-color: var(--color-accentPrimary);
+      }
+
+      &.current:hover {
+        background-color: var(--color-accent2Light);
+      }
+    }
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    border-color: var(--color-accent2Light);
+
+    label {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+
+    button {
+      display: grid;
+      grid-column: 1 / -1;
+      text-align: center;
+      background-color: var(--color-accent1Light);
+      color: inherit;
+      border-color: inherit;
+    }
+
+    input {
+      color: inherit;
+      background-color: var(--color-accent1Light);
+      border-color: inherit;
+    }
+
+    textarea {
+      font: inherit;
+      color: inherit;
+      background-color: var(--color-accent1Light);
+      border-color: inherit;
+    }
+ }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .legend{
+    flex: 1;
+    padding: 4em;
+    border: 2px;
+    border-color: var(--color-accent1Dark);
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    border-radius: 100%;
+  }
+
+  svg {
+
+
+    &:has(path:hover) {
+
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+    path {
+      transition: 300ms;
+      cursor: points;
+    }
+  }
+}
+
+  .selected {
+    --color: var(--color-accent2Light) !important ;
+
+    &:is(path) {
+      fill: var(--color);
+    }
+  }
+
+  .legend-elem::marker {
+    color: var(--color) ;
+    font-size: 4em;
+  }
+
+  #projects-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: 1.5em;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  label.color-scheme {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font: inherit;
+    font-size: 75%;
+    select {
+      width: 6em;
+    }
+  }
+
+  /* For the plotting system  */
+  .gridlines {
+    opacity: 0.1;
+  }
+
+  dl.info {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 2em 1fr;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+  }
+
+  dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    background-color: var(--color-basis);
+    box-shadow: 5px 5px 5px black;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  circle {
+    @starting-style {
+      r: 0;
+    }
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  circle:hover {
+    transform: scale(1.5);
+  }
+
+  #commit-tooltip {
+    visibility: hidden;
+  }
+
+  /* for the selector */
+ @keyframes marching-ants {
+    to {
+      stroke-dashoffset: -8; /* 5 + 3 */
+    }
+  }
+
+  .selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+  }
+
+  circle.selected {
+    fill: #ff6b6b;
+  }
+
+  /* stats styling so it look nice */
+  #stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Optional: Adds spacing between different stats sections */
+  }
+
+  #stats dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusts number of columns dynamically */
+    column-gap: 1rem; /* Space between columns */
+    row-gap: 0.5rem; /* Space between rows */
+  }
+
+  #stats dt, #stats dd {
+    text-align: center; /* Optional: Centers the text */
+  }
+
+  #stats dt {
+    font-weight: bold; /* Highlights the stat name */
+  }
+
+  #stats dd {
+    margin: 0; /* Ensures no extra margin interferes */
+  }
+
+  .selector {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    width: 1fr;
+
+    label {
+      flex: 1;
+      display: inherit;
+      flex-wrap: wrap;
+      text-align: right;
+    }
+
+    input {
+      margin-left: 1em;
+      flex: 1;
+    }
+  }
+}
+
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  dt {
+    grid-column: 1;
+  }
+
+  dd {
+    grid-column: 2;
+  }
+}

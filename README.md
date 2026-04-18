@@ -11,3 +11,16 @@
 Here are some ideas to get you started:
 
 -->
+
+``
+# nmcli con add type wifi ifname wlan0 con-name ucsd-protected ssid UCSD-PROTECTED
+# nmcli con edit id CONNECTION_NAME
+nmcli> set ipv4.method auto
+nmcli> set 802-1x.eap peap
+nmcli> set 802-1x.phase2-auth mschapv2
+nmcli> set 802-1x.identity USERNAME
+nmcli> set 802-1x.password PASSWORD
+nmcli> set wifi-sec.key-mgmt wpa-eap
+nmcli> save
+nmcli> activate
+``

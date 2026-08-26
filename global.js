@@ -41,7 +41,7 @@ for (let p of pages) {
   let a = document.createElement('a');
   const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/"                  // Local server
-  : "/106l1/";         // GitHub Pages repo name
+  : "/pinebird12/";         // GitHub Pages repo name
   if (!url.startsWith('http')) {
     url = BASE_PATH + url;
   }

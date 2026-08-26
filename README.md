@@ -1,5 +1,4 @@
 ## Hello! 👋
-- 🔭 I’m currently working on geological feature detection using support vector machines - [mawks12/seamount_picking](https://github.com/mawks12/seamount_picking)
 - 🌱 My current project is to build a teletype out of an old smith-corona electric typewriter [pinebird12/ttls](https://github.com/pinebird12/ttls)
 - 📫 How to reach me: ivyhawks3@gmail.com
 - 😄 Pronouns: She/Her

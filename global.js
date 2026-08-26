@@ -29,10 +29,7 @@ if (currentLink) {
 let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
-  { url: 'contact/', title: 'Contact' },
-  { url: 'curriculumVitae.html', title: 'CV' },
-  { url: 'meta/index.html', title: 'Meta' },
-  { url: 'https://github.com/mawks12', title: 'GitHub (Student)'},
+  { url: 'resume.html', title: 'Resume' },
   { url: 'https://github.com/pinebird12', title: 'GitHub (Personal)'},
 ];
 
@@ -127,7 +124,7 @@ export function renderProjects(projects, container) {
       container.innerHTML = '';
       const headingElem = document.querySelector('.project-title');
       const numProj = projects.length;
-      headingElem.textContent = `Current Projects (${numProj})`
+      headingElem.textContent = `Latest Projects (${numProj})`
       for (let project of projects) {
         const article = document.createElement('article');
         if (project['title'] === undefined

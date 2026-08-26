@@ -101,23 +101,23 @@ function makePlot(data) {
 
 const projectsContainer = document.querySelector('.project');
 
-makePlot(data);
+// makePlot(data);
 
 // add a search bar
 let query = '';
 
 let searchInput = document.querySelector('.searchBar');
 
-searchInput.addEventListener('input', (event) => {
-  // update query value
-  query = event.target.value.toLowerCase();
-  visProj = projects.filter((project) => {
-    let values = Object.values(project).join('\n').toLowerCase();
-    return values.includes(query.toLowerCase());
-  });
-  renderProjects(visProj, projectsContainer);
-  let projInfo = projFormat(visProj);
-  makePlot(projInfo);
-});
+//searchInput.addEventListener('input', (event) => {
+//  // update query value
+//  query = event.target.value.toLowerCase();
+//  visProj = projects.filter((project) => {
+//    let values = Object.values(project).join('\n').toLowerCase();
+//    return values.includes(query.toLowerCase());
+//  });
+//  renderProjects(visProj, projectsContainer);
+//  let projInfo = projFormat(visProj);
+//  makePlot(projInfo);
+//});
 
 renderProjects(visProj, projectsContainer, 'h2');

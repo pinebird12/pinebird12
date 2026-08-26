@@ -1,16 +1,23 @@
 [
-  {
-    "title": "Heart conduction Visualization",
-    "image": "../images/sdfseHearts.jpg",
-    "year": "2025",
-    "description": "The LED Hearts were a portion of the Continuing Stem Education Project from the Outreach Committee of the Biomedical Engineering Society here at UCSD. They were an exciting project to help work on as they combined arduino, 3d printing, wiring, and timings to create something which hopefully will inspire a younger generation of scientists! I contributed all of the code managing LED timings and sequences on the microcontroller, which can be found on the project Github Page.",
-    "link": "https://github.com/pinebird12/sdfsc_arduino"
-  },
-  {
-    "title": "Seamount Identification",
-    "image": "../images/Seamount_workflow_v1.jpg",
-    "year": "2023",
-    "description": "As Part of the Sandwell Lab at Scripps Institute for Geophysics and Planetry Physics, I am currently working to develop a ML Pipeline to speed up the currently highly labor intensive process of manualy identifying seamounts in satelite derived gravity data (VGG). Above is an example of the current preprocessing pipeline we use to smooth and amplify potential seamounts. For more information on this type of work, see our Website.",
-    "link": "https://github.com/mawks12/seamount_picking"
-  }
+    {
+        "title": "Communication Lower Bounds for Muli-Party Graph Traversal",
+        "image": "../images/CC_trav_poster.jpg",
+        "year": "2025",
+        "description": "Communication complexity studies the asymptotic communication bounds of various models of communication. The concept of communication is universal among computing: many problems in cryptography, distributed computing, game theory, and multi-agent learning, among many others, can be framed in terms of communication. In this report we survey the applications of communication complexity for a variety of fields, examining the fundamental communication problems in each and their lower and upper bounds.",
+        "link": "https://github.com/rybplayer/DSCCapstone/blob/main/q2_report/DSCCapstone.pdf"
+    },
+    {
+        "title": "Heart Conduction Visualization",
+        "image": "../images/sdfseHearts.jpg",
+        "year": "2025",
+        "description": "The LED Hearts were a portion of the Continuing Stem Education Project from the Outreach Committee of the Biomedical Engineering Society here at UCSD. They were an exciting project to help work on as they combined arduino, 3d printing, wiring, and timings to create something which hopefully will inspire a younger generation of scientists! I contributed all of the code managing LED timings and sequences on the microcontroller, which can be found on the project Github Page.",
+        "link": "https://github.com/pinebird12/sdfsc_arduino"
+    },
+    {
+        "title": "Seamount Identification",
+        "image": "../images/Seamount_workflow_v1.jpg",
+        "year": "2023",
+        "description": "As Part of the Sandwell Lab at Scripps Institute for Geophysics and Planetary Physics, I am currently working to develop a ML Pipeline to speed up the currently highly labor intensive process of manually identifying seamounts in satellite derived gravity data (VGG). Above is an example of the current preprocessing pipeline we use to smooth and amplify potential seamounts. For more information on this type of work, see the website at topex.ucsd.edu.",
+        "link": "https://github.com/mawks12/seamount_picking"
+    }
 ]

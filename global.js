@@ -146,7 +146,7 @@ export function renderProjects(projects, container) {
 
         if (!(project['image'] === null)) {
           const image = document.createElement('img');
-          image.setAttribute('src', project['image']);
+          image.setAttribute('src', `./projects/${project['image']}`);
           article.appendChild(image);
         }
         article.appendChild(desc);

@@ -13,6 +13,11 @@ if (prefersDark) {
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 };
+const head = document.querySelector("head");
+let favicon = document.createElement('link');
+favicon.setAttribute("rel", "icon");
+favicon.setAttribute("href", "/pinebird12/favicon.ico");
+head.appendChild(favicon);
 
 
 // Configure the navigation bar
@@ -30,7 +35,7 @@ let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
   { url: 'resume.html', title: 'Resume' },
-  { url: 'https://github.com/pinebird12', title: 'GitHub (Personal)'},
+  { url: 'https://github.com/pinebird12', title: 'GitHub'},
 ];
 
 let nav = document.createElement('nav');
